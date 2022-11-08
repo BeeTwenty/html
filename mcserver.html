@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Servers</title>
+<title>BedRock Servers</title>
 <link rel="icon" href="img/favicons/favicon.png.jpg">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
@@ -12,13 +12,16 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
     <div class="container">
-        <a href="index.html" class="navbar-brand">Servers</a>
+        <a href="index.html" class="navbar-brand">Bedrock</a>
         
         <button 
                 class="navbar-toggler"
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#navmenu"
+                aria-controls="navmenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
                 >
             <span class="navbar-toggler-icon"></span> 
         </button>
@@ -28,8 +31,11 @@
                     <a href="index.html" class="nav link">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#minecraft" class="nav link">Minecraft </a>
+                    <a href="#minecraft" class="nav link">Minecraft Bedrock </a>
                 </li>
+                <li class="nav-item">
+                    <a href="#minecraft" class="nav link active">Minecraft</a>
+                </li> 
             </ul>
         </div>
     </div>
@@ -37,34 +43,13 @@
 </nav>
 <!--server section-->
 <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
-    <div class="container p-5">
+    <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
             <div>
-                <h1 id="minecraft"> Minecraft Bedrock</h1>
-                
-                <p class="lead my-4">Join today!</p>
-                <a href="/mcbservers.html"> 
-
-                <button class="btn btn-primary btn-lg" >Servers</button>
-            </a>
+                <h1> Server Coming soon! </h1>
             </div>
-
+        
             <img class="img-fluid w-50 d-none d-sm-block" src="/img/mcb.jpg" alt="Minecraft Bedrock">
-        </div>
-    </div>
-    <div class="container p-5 ">
-        <div class="d-sm-flex align-items-center justify-content-between ">
-            <div >
-                <h1 id="minecraft"> Minecraft</h1>
-                
-                <p class="lead my-4">Join today!</p>
-                <a href="/mcservers.html"> 
-
-                <button class="btn btn-primary btn-lg" >Servers</button>
-            </a>
-            </div>
-
-            <img class="img-fluid w-50 d-none d-sm-block" src="/img/minecraft.jpeg" alt="Minecraft Bedrock">
         </div>
     </div>
 </section>
