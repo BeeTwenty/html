@@ -44,17 +44,18 @@
    
 </nav>
 <!--server section-->
-<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center ">
     
     
         
        
-    <h2>Survival</h2>
+    <h2 id="mode"></h2>
+    
     <h1 class="text-7xl font-medium text-black mb-5" id="server-ip"></h1>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
-    <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span> Players Online</div>
-  
-
+    <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">100</span> Players Online</div>
+      
+    
 </section>
 
 <script>
@@ -70,14 +71,16 @@
                 console.log(data.error);
                 return false;
             }
+            cconsole.log(data);
             const motd = document.getElementById("motd");
-            motd.innerHTML = data.motd;
-
+            motd.innerHTML = data.motd.clean;
             const playerCounter = document.getElementById("player-count");
-            playerCounter.innerHTML = data.players.now;
-
-            const logo = document.getElementById("server-icon");
-            logo.src = data.favicon;
+            playerCounter.innerHTML = data.players.online;
+            const maxPlayers = document.getElementById("max-players");
+            maxPlayers.innerHTML = data.players.max;
+            const gameMode = document.getElementById("mode");
+            gameMode.innerHTML = data.gamemode;
+            
         } 
     }
 
