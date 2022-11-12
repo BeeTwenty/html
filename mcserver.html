@@ -54,7 +54,7 @@
     <h1 class="text-7xl font-medium text-black mb-5" id="server-ip"></h1>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">100</span> Players Online</div>
-      
+    <div class="text-3xl"><span class="font-semibold server-status" id="version">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">100</span> Players Online</div> 
     
 </section>
 
@@ -62,7 +62,7 @@
     function initServerData(serverIp,serverPort){
         const serverIpElement = document.getElementById('server-ip');
         serverIpElement.innerHTML = serverIp;
-        fetch('https://api.mcstatus.io/v2/status/java/'+serverIp)
+        fetch('https://api.mcsrvstat.us/2/'+serverIp)
         .then(response => response.json())
         .then(data => handleServerStatus(data));
   
@@ -71,7 +71,7 @@
                 console.log(data.error);
                 return false;
             }
-            cconsole.log(data);
+            console.log(data);
             const motd = document.getElementById("motd");
             motd.innerHTML = data.motd.clean;
             const playerCounter = document.getElementById("player-count");

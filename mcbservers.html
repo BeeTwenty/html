@@ -80,7 +80,7 @@
     function initServerData(serverIp,serverPort){
         const serverIpElement = document.getElementById('server-ip');
         serverIpElement.innerHTML = serverIp;
-        fetch('https://api.mcstatus.io/v2/status/bedrock/'+serverIp+':'+serverPort)
+        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp+':'+serverPort)
         .then(response => response.json())
         .then(data => handleServerStatus(data));
         
@@ -103,12 +103,12 @@
        
     }
 
-    initServerData("au11no.com","19133");
+  
 
     function initServerData2(serverIp2,serverPort2){
         const serverIpElement2 = document.getElementById('server-ip2');
         serverIpElement2.innerHTML = serverIp2;
-        fetch('https://api.mcstatus.io/v2/status/bedrock/'+serverIp2+':'+serverPort2)
+        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp2+':'+serverPort2)
         .then(response => response.json())
         .then(data => handleServerStatus2(data));
         
@@ -129,7 +129,8 @@
             
         } 
     }
-
+    initServerData("au11no.com","19133");
+    initServerData2("au11no.com","19135");
     
     
 </script>
