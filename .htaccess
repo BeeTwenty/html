@@ -1,3 +1,3 @@
-RewriteEngine ON
-RewriteCond %{HTTPS} !=on
-RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://au11no.com/$1 [L,R=301]
