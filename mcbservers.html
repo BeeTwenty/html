@@ -54,7 +54,7 @@
     <h1 class="text-7xl font-medium text-black " id="server-ip"></h1>
     <h3 class="text-7xl font-medium text-black mb-5" id="port"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
-    <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">100</span> Players Online</div>
+    <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
 
     
 </section>
@@ -69,7 +69,7 @@
     <h1 class="text-7xl font-medium text-black mb-5" id="server-ip2"></h1>
     <h3 class="text-7xl font-medium text-black mb-5" id="port2"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd2">Server Offline</span>
-    <div class="text-3xl"><span class="font-semibold server-status" id="player-count2">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
+    <div class="text-3xl"><span class="font-semibold server-status" id="player-count2">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players2">0</span> Players Online</div>
       
     
 </section>
@@ -82,7 +82,7 @@
     function initServerData(serverIp,serverPort){
         const serverIpElement = document.getElementById('server-ip');
         serverIpElement.innerHTML = serverIp;
-        fetch('https://api.mcstatus.io/v2/status/bedrock/'+serverIp+':'+serverPort)
+        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp+':'+serverPort)
         .then(response => response.json())
         .then(data => handleServerStatus(data));
         
@@ -98,7 +98,7 @@
             playerCounter.innerHTML = data.players.online;
             const maxPlayers = document.getElementById("max-players");
             maxPlayers.innerHTML = data.players.max;
-            const gameMode = document.getElementById("mode");
+            const gameMode = document.getElementById("mode2");
             gameMode.innerHTML = data.gamemode;
             const Port = document.getElementById("port");
             Port.innerHTML = "port: "+data.port;
@@ -107,12 +107,13 @@
        
     }
 
+
     initServerData("au11no.com","19133");
-/*
+
     function initServerData2(serverIp2,serverPort2){
         const serverIpElement2 = document.getElementById('server-ip2');
         serverIpElement2.innerHTML = serverIp2;
-        fetch('https://api.mcstatus.io/v2/status/bedrock/'+serverIp2+':'+serverPort2)
+        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp2+':'+serverPort2)
         .then(response => response.json())
         .then(data => handleServerStatus2(data));
         
@@ -136,7 +137,11 @@
         } 
     }
 
-    */
+
+
+    initServerData("au11no.com","19133");
+    initServerData2("au11no.com","19135");
+
     
 </script>
 </body>
