@@ -44,33 +44,31 @@
 </nav>
 <!--server section-->
 
-<section class=" bg-img   p-5 p-lg-0 pt-lg-5 text-center" >
-   
-   
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center ">
+    
+    
         
        
-    <h2 id="mode"></h2>
+    <h2 id="mode">survival</h2>
+    <div class="text-3xl"><span class="text-7xl font-medium text-black mb-5" id="server-ip"></span><span>:</span><span class="text-7xl font-medium text-black mb-5" id="server-port"></span></div>
     
-    <h1 class="text-7xl font-medium text-black " id="server-ip"></h1>
-    <h3 class="text-7xl font-medium text-black mb-5" id="port"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
 
     
 </section>
 
-<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center ">
+<section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center ">
     
     
         
        
-    <h2 id="mode2"></h2>
+    <h2 id="mode2">survival</h2>
+    <div class="text-3xl"><span class="text-7xl font-medium text-black mb-5" id="server-ip2"></span><span>:</span><span class="text-7xl font-medium text-black mb-5" id="server-port2"></span></div>
     
-    <h1 class="text-7xl font-medium text-black mb-5" id="server-ip2"></h1>
-    <h3 class="text-7xl font-medium text-black mb-5" id="port2"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd2">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count2">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players2">0</span> Players Online</div>
-      
+
     
 </section>
 
@@ -79,13 +77,15 @@
 <script>
 
 
-    function initServerData(serverIp,serverPort){
+function initServerData(serverIp, serverPort){
         const serverIpElement = document.getElementById('server-ip');
         serverIpElement.innerHTML = serverIp;
-        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp+':'+serverPort)
+        const serverPortElement = document.getElementById('server-port');
+        serverPortElement.innerHTML = serverPort;
+        fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp)
         .then(response => response.json())
         .then(data => handleServerStatus(data));
-        
+  
         function handleServerStatus(data){
             if(data.status=='error'){
                 console.log(data.error);
@@ -98,21 +98,20 @@
             playerCounter.innerHTML = data.players.online;
             const maxPlayers = document.getElementById("max-players");
             maxPlayers.innerHTML = data.players.max;
-            const gameMode = document.getElementById("mode2");
-            gameMode.innerHTML = data.gamemode;
-            const Port = document.getElementById("port");
-            Port.innerHTML = "port: "+data.port;
+           
+           
             
-        }
-       
+        } 
     }
 
 
-    initServerData("au11no.com","19133");
+    
 
     function initServerData2(serverIp2,serverPort2){
         const serverIpElement2 = document.getElementById('server-ip2');
         serverIpElement2.innerHTML = serverIp2;
+        const serverPortElement2 = document.getElementById('server-port2');
+        serverPortElement2.innerHTML = serverPort2;
         fetch('https://api.mcsrvstat.us/bedrock/2/'+serverIp2+':'+serverPort2)
         .then(response => response.json())
         .then(data => handleServerStatus2(data));
@@ -129,10 +128,7 @@
             playerCounter2.innerHTML = data.players.online;
             const maxPlayers2 = document.getElementById("max-players2");
             maxPlayers2.innerHTML = data.players.max;
-            const gameMode2 = document.getElementById("mode2");
-            gameMode2.innerHTML = data.gamemode;
-            const Port2 = document.getElementById("port2");
-            Port2.innerHTML = "port: "+data.port;
+            
             
         } 
     }
