@@ -51,7 +51,8 @@
        
     <h2 id="mode"></h2>
     
-    <h1 class="text-7xl font-medium text-black mb-5" id="server-ip"></h1>
+    <h1 class="text-7xl font-medium text-black " id="server-ip"></h1>
+    <h3 class="text-7xl font-medium text-black mb-5" id="port"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
 
@@ -66,6 +67,7 @@
     <h2 id="mode2"></h2>
     
     <h1 class="text-7xl font-medium text-black mb-5" id="server-ip2"></h1>
+    <h3 class="text-7xl font-medium text-black mb-5" id="port2"></h3>
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd2">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count2">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players2">0</span> Players Online</div>
       
@@ -98,12 +100,15 @@
             maxPlayers.innerHTML = data.players.max;
             const gameMode = document.getElementById("mode2");
             gameMode.innerHTML = data.gamemode;
+            const Port = document.getElementById("port");
+            Port.innerHTML = "port: "+data.port;
             
         }
        
     }
 
-  
+
+    initServerData("au11no.com","19133");
 
     function initServerData2(serverIp2,serverPort2){
         const serverIpElement2 = document.getElementById('server-ip2');
@@ -126,12 +131,17 @@
             maxPlayers2.innerHTML = data.players.max;
             const gameMode2 = document.getElementById("mode2");
             gameMode2.innerHTML = data.gamemode;
+            const Port2 = document.getElementById("port2");
+            Port2.innerHTML = "port: "+data.port;
             
         } 
     }
+
+
+
     initServerData("au11no.com","19133");
     initServerData2("au11no.com","19135");
-    
+
     
 </script>
 </body>
