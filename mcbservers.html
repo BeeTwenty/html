@@ -90,7 +90,7 @@ function initServerData(serverIp, serverPort){
             if(data.status=='error'){
                 console.log(data.error);
                 return false;
-            }
+            } 
             console.log(data);
             const motd = document.getElementById("motd");
             motd.innerHTML = data.motd.clean;
