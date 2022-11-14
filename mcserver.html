@@ -49,8 +49,8 @@
     
         
        
-    <h2 id="mode"></h2>
-    <div class="text-3xl"><span class="text-7xl font-medium text-black mb-5" id="server-ip"></span><span class="text-7xl font-medium text-black mb-5" id="server-port"></span></div>
+    <h2 >survival</h2>
+    <div class="text-3xl"><span class="text-7xl font-medium text-black mb-5" id="server-ip"></span><span>:</span><span class="text-7xl font-medium text-black mb-5" id="server-port"></span></div>
     
     <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
     <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
@@ -59,7 +59,7 @@
 </section>
 
 <script>
-    function initServerData(serverIp){
+    function initServerData(serverIp, serverPort){
         const serverIpElement = document.getElementById('server-ip');
         serverIpElement.innerHTML = serverIp;
         const serverPortElement = document.getElementById('server-port');
@@ -80,13 +80,13 @@
             playerCounter.innerHTML = data.players.online;
             const maxPlayers = document.getElementById("max-players");
             maxPlayers.innerHTML = data.players.max;
-            const gameMode = document.getElementById("mode");
-            gameMode.innerHTML = data.gamemode;
+           
+           
             
         } 
     }
 
-    initServerData("au11no.com");
+    initServerData("au11no.com", "25565");
 </script>
 
 
