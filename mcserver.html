@@ -54,48 +54,10 @@
 <!--server section-->
 <section class="bg-light text-dark p-5 p-lg-0 pt-lg-5 text-center ">
     
-    
-        
-       
-    <h2 >survival</h2>
-    <div class="text-3xl"><span class="text-7xl font-medium text-black mb-5" id="server-ip"></span><span>:</span><span class="text-7xl font-medium text-black mb-5" id="server-port"></span></div>
-    
-    <span class="text-gray-300 text-lg mb-3 server-online" id="motd">Server Offline</span>
-    <div class="text-3xl"><span class="font-semibold server-status" id="player-count">0</span><span class="font-semibold server-status"> /</span> <span class="font-semibold server-status" id="max-players">0</span> Players Online</div>
-
-    
+    <a href="https://minecraft-mp.com/server-s312220" target="_blank"><img src="https://minecraft-mp.com/banner-312220-3.png" border="0"></a>
 </section>
 
-<script>
-    function initServerData(serverIp, serverPort){
-        const serverIpElement = document.getElementById('server-ip');
-        serverIpElement.innerHTML = serverIp;
-        const serverPortElement = document.getElementById('server-port');
-        serverPortElement.innerHTML = serverPort;
-        fetch('https://api.mcsrvstat.us/2/'+serverIp)
-        .then(response => response.json())
-        .then(data => handleServerStatus(data));
-  
-        function handleServerStatus(data){
-            if(data.status=='error'){
-                console.log(data.error);
-                return false;
-            }
-            console.log(data);
-            const motd = document.getElementById("motd");
-            motd.innerHTML = data.motd.clean;
-            const playerCounter = document.getElementById("player-count");
-            playerCounter.innerHTML = data.players.online;
-            const maxPlayers = document.getElementById("max-players");
-            maxPlayers.innerHTML = data.players.max;
-           
-           
-            
-        } 
-    }
 
-    initServerData("au11no.com", "25565");
-</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
