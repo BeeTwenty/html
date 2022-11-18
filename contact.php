@@ -169,13 +169,13 @@ function validateForm() {
   messageSend();
 }
 
-function messageSend(){
-    formData = {
+function messageSend() {
+  formData = {
     'name'     : $('input[name=name]').val(),
     'email'    : $('input[name=email]').val(),
     'subject'  : $('input[name=subject]').val(),
     'message'  : $('textarea[name=message]').val()
-};
+  };
 
 formData = {
   'name': $('input[name=name]').val(),
