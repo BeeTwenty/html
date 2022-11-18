@@ -137,7 +137,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
-
+function messageSend() {
+  formData = {
+    'name'     : $('input[name=name]').val(),
+    'email'    : $('input[name=email]').val(),
+    'subject'  : $('input[name=subject]').val(),
+    'message'  : $('textarea[name=message]').val()
+  }}; 
 function validateForm() {
   var name =  document.getElementById('name').value;
   if (name == "") {
@@ -169,13 +175,7 @@ function validateForm() {
   messageSend();
 }
 
-function messageSend() {
-  formData = {
-    'name'     : $('input[name=name]').val(),
-    'email'    : $('input[name=email]').val(),
-    'subject'  : $('input[name=subject]').val(),
-    'message'  : $('textarea[name=message]').val()
-  }};
+
 
 formData = {
   'name': $('input[name=name]').val(),
