@@ -1,4 +1,6 @@
 <? php
+
+
   if (isset($_POST['name']))
     $name = $_POST['name'];
   if (isset($_POST['email']))
@@ -34,4 +36,6 @@
   mail($recipient, $subject, $content, $mailheader) or die("Error!");
   print json_encode(array("message" => "Email successfully sent!", "code" => 1));
   exit();
+
+  
 ?>
