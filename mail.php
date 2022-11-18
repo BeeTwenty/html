@@ -29,7 +29,7 @@
     die();
   }
   $content = "From: $name \nEmail: $email \nMessage: $message";
-  $recipient = "support@au11no.com";
+  $recipient = "contact@au11no.com";
   $mailheader = "From: $email \r\n";
   mail($recipient, $subject, $content, $mailheader) or die("Error!");
   print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
