@@ -175,7 +175,7 @@ function messageSend() {
     'email'    : $('input[name=email]').val(),
     'subject'  : $('input[name=subject]').val(),
     'message'  : $('textarea[name=message]').val()
-  };
+  }};
 
 formData = {
   'name': $('input[name=name]').val(),
@@ -199,6 +199,7 @@ $.ajax({
     $('#status').text(jqXHR);
   }
 });
+
 </script>
 </body>
 <footer class="bg-light text-center text-lg-start fixed-bottom">
