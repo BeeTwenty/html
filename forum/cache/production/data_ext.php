@@ -1,0 +1,4 @@
+<?php exit; ?>
+1700833266
+896
+a:5:{s:18:"alex75/welcomeback";a:4:{s:8:"ext_name";s:18:"alex75/welcomeback";s:10:"ext_active";s:1:"1";s:9:"ext_state";s:4:"b:0;";s:8:"ext_path";s:23:"ext/alex75/welcomeback/";}s:24:"phpbb/boardannouncements";a:4:{s:8:"ext_name";s:24:"phpbb/boardannouncements";s:10:"ext_active";s:1:"1";s:9:"ext_state";s:4:"b:0;";s:8:"ext_path";s:29:"ext/phpbb/boardannouncements/";}s:13:"phpbb/viglink";a:4:{s:8:"ext_name";s:13:"phpbb/viglink";s:10:"ext_active";s:1:"1";s:9:"ext_state";s:4:"b:0;";s:8:"ext_path";s:18:"ext/phpbb/viglink/";}s:25:"rmcgirr83/applicationform";a:4:{s:8:"ext_name";s:25:"rmcgirr83/applicationform";s:10:"ext_active";s:1:"1";s:9:"ext_state";s:4:"b:0;";s:8:"ext_path";s:30:"ext/rmcgirr83/applicationform/";}s:20:"vse/passwordstrength";a:4:{s:8:"ext_name";s:20:"vse/passwordstrength";s:10:"ext_active";s:1:"1";s:9:"ext_state";s:4:"b:0;";s:8:"ext_path";s:25:"ext/vse/passwordstrength/";}}
